@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View 360</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/css.css">
+</head>
+<body ng-app="view-360">
+    <div ng-controller="mainController">
+        <div id="container"></div>
+        <div class="col-md-3" style="height: 500px; position: fixed; top: 0; left: -20px;">
+            <div class="portlet-body" style="background: transparent; opacity: 0.9">
+                <div class="panel-group accordion scrollable" id="accordion2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#collapse_2_1" aria-expanded="false" style="color: #828282;">
+                                    DESCRIPCIÓN </a>
+                            </h4>
+                        </div>
+                        <div id="collapse_2_1" class="panel-collapse collapse" aria-expanded="false" style="background: black; height: 0;">
+                            <div class="panel-body">
+                                <!--<div class="letter1" style="margin-top: 14px; overflow: auto; font-size: small; text-align: justify;" data-ng-bind-html="getHtmlDescription()">-->
+                                <p style="color: white;">{{product.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" data-target="#collapse_2_2" aria-expanded="false" style="color: #828282;">
+                                    ESPECIFICACIONES</a>
+                            </h4>
+                        </div>
+                        <div id="collapse_2_2" class="panel-collapse collapse" aria-expanded="false" style="color: #828282;">
+                            <div class="panel-body">
+                                <table class="datasheet">
+                                    <tbody>
+                                    <tr data-ng-repeat="item in product.datasheet">
+                                        <td class="datasheet-features-type" width="60%">{{item.name}}</td>
+                                        <td>{{item.value}}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a id="acordion-map" class="accordion-toggle collapsed" data-ng-click="mapBasic()" data-toggle="collapse" data-parent="#accordion2" data-target="#collapse_2_3" aria-expanded="false" style="color: #828282;">
+                                    MAPA</a>
+                            </h4>
+                        </div>
+                        <div id="collapse_2_3" class="panel-collapse collapse" aria-expanded="false" style="background: black; color: white; height: 800px;">
+                            <div class="portlet light">
+                                <div class="portlet-body">
+                                    <div id = "gmap_basic" style="min-height: 248px; min-width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-offset-10 col-md-2 col-xs-offset-8 col-xs-4" style=" position: fixed; top: 0; right: -27px; height: 101%;">
+                <div class="row">
+                    <div class="col-md-12" data-ng-repeat="item in product.photos" style="margin: 3px;">
+                        <div><a data-ng-click="changeImage(item)" style="cursor: pointer;"><img data-ng-src="{{item}}" alt="product.name" width="100%"></a></div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./node_modules/angular/angular.js"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="./assets/js/three.js"></script>
+    <script src="./app/app.js"></script>
+</body>
+</html>

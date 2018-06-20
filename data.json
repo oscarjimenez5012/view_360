@@ -1,0 +1,24 @@
+{
+  "product": {
+    "name": "Casa en Colina",
+    "description": "Esta es un casa en la colina de 320 mts cuadrados",
+    "datasheet": {
+      "0": {
+        "name": "Nombre",
+        "value": "Casa la Colina"
+      },
+      "1": {
+        "name": "Telefono",
+        "value": "8887171"
+      }
+    },
+    "photos": {
+      "0": "assets/images/maxresdefault.jpg",
+      "1": "assets/images/depositphotos_124210988-stock-photo-home-interior-in-panoramic-360.jpg",
+      "2": "assets/images/depositphotos_124211276-stock-photo-home-interior-in-panoramic-360.jpg",
+      "4": "assets/images/maxresdefault.jpg",
+      "5": "assets/images/maxresdefault (1).jpg",
+      "6": "assets/images/maxresdefault (2).jpg"
+    }
+  }
+}
